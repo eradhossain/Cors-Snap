@@ -25,6 +25,6 @@ or the X-Requested-With header to be set. To avoid unnecessary preflight (OPTION
 it's recommended to not manually set these headers in your code.
 
 
-Repository    :   https://github.com/Snapaper/cors-anywhere/
+Repository    :   https://github.com/smokindope/Cors-Snap
 Source code   :   https://github.com/Rob--W/cors-anywhere/
 Documentation :   https://github.com/Rob--W/cors-anywhere/#documentation
