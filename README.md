@@ -1,4 +1,4 @@
-Cors on Glitch<br>
+Cors Proxy Setup on Glitch, UNBLOCK Websites & Streams<br>
 First Sign-Up & Sign-In: https://glitch.com<br><br>
 
 1, Click 'New Project' (Top of the page)<br>
@@ -11,7 +11,7 @@ First Sign-Up & Sign-In: https://glitch.com<br><br>
 
 ================================================================================================<br><br>
 
-Cors on Render FREE Easy Setup<br><br>
+Cors on Render FREE Easy Setup, UNBLOCK Websites & Streams<br><br>
 
 Signup: http://render.com<br><br>
 
