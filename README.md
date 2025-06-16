@@ -32,4 +32,4 @@ Example: https://cors-netnr.onrender.com/http://YOUR.URL.GOES.HERE<br><br>
 File types allowed<br>
 .html .php .ts .m3u8 .mp4 .mp3 etc etc<br><br>
 
-Visit htts://forum.tfms.xyz for more
+Visit https://forum.tfms.xyz for more
