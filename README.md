@@ -9,6 +9,8 @@ First Sign-Up & Sign-In: https://glitch.com<br><br>
 6, Let it load then click 'Preview' (Its at the bottom of the page) select 'Preview in a new window'<br>
 7, Copy your URL from the preview pane address bar<br><br>
 
+How to use:<br>
+https://your-url-for.glitch.me/http://your.video.file.here.ts<br>
 ================================================================================================<br><br>
 
 Cors on Render FREE Easy Setup, UNBLOCK Websites & Streams<br><br>
