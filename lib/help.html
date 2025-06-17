@@ -5,58 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EA Proxy Browser</title>
   <style>
+    :root {
+      --bg: #0f172a;
+      --box: #1e293b;
+      --input: #334155;
+      --text: #f1f5f9;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --glow: 0 0 10px #3b82f6, 0 0 20px #2563eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: #0f172a;
-      color: #fff;
+      background: var(--bg);
+      color: var(--text);
       font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      padding: 20px;
     }
+
     .proxy-box {
-      background: #1e293b;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-      width: 90%;
-      max-width: 500px;
+      background: var(--box);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      width: 100%;
+      max-width: 480px;
       text-align: center;
+      animation: fadeIn 1.2s ease-out;
     }
+
     .proxy-box h1 {
-      font-size: 24px;
+      font-size: 28px;
       margin-bottom: 20px;
+      animation: slideInDown 1s ease;
     }
+
     input[type="text"] {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       font-size: 16px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
+      background: var(--input);
+      color: var(--text);
+      outline: none;
       margin-bottom: 20px;
+      transition: box-shadow 0.3s ease;
     }
+
+    input[type="text"]:focus {
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
     button {
-      background: #3b82f6;
+      background: var(--accent);
       border: none;
-      padding: 12px 24px;
+      padding: 14px 26px;
       font-size: 16px;
       color: white;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: var(--glow);
     }
+
     button:hover {
-      background: #2563eb;
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideInDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .proxy-box {
+        padding: 30px 20px;
+      }
+      .proxy-box h1 {
+        font-size: 22px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="proxy-box">
-    <h1>Browse Anonymously with EA Proxy</h1>
+    <h1>EA Proxy Browser</h1>
     <form id="proxyForm">
       <input type="text" id="urlInput" placeholder="https://example.com" required>
       <br>
-      <button type="submit">Go</button>
+      <button type="submit">Browse Now</button>
     </form>
   </div>
 
@@ -65,12 +118,14 @@
 
     document.getElementById('proxyForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const inputUrl = document.getElementById('urlInput').value.trim();
-      if (!inputUrl.startsWith('http')) {
-        alert('Please enter a valid URL including http or https');
-        return;
+      let url = document.getElementById('urlInput').value.trim();
+
+      // Auto add https:// if missing
+      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
       }
-      window.location.href = proxyBase + inputUrl;
+
+      window.location.href = proxyBase + url;
     });
   </script>
 </body>
