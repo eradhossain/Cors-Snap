@@ -1,2 +1,77 @@
-!!!! It Works !!!!
-Visit www.eamov.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EA Proxy Browser</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .proxy-box {
+      background: #1e293b;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+    .proxy-box h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    button {
+      background: #3b82f6;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="proxy-box">
+    <h1>Browse Anonymously with EA Proxy</h1>
+    <form id="proxyForm">
+      <input type="text" id="urlInput" placeholder="https://example.com" required>
+      <br>
+      <button type="submit">Go</button>
+    </form>
+  </div>
+
+  <script>
+    const proxyBase = 'https://eaproxy.glitch.me/';
+
+    document.getElementById('proxyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const inputUrl = document.getElementById('urlInput').value.trim();
+      if (!inputUrl.startsWith('http')) {
+        alert('Please enter a valid URL including http or https');
+        return;
+      }
+      window.location.href = proxyBase + inputUrl;
+    });
+  </script>
+</body>
+</html>
